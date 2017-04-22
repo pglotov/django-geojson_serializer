@@ -1,0 +1,4 @@
+dist/*
+django_geojson_serializer.egg-info/*
+*.pyc
+db.sqlite3

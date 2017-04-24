@@ -39,5 +39,16 @@ Geojson serializer works with django rest framework as a decorator.
          queryset = City.objects.all()
          serializer_class = CitySerializer
 
+   Then you can register CityViewSet with a router and the view will generate and accept geojsons in corresponding requests.
 
-Then you can register CityViewSet with a router and the view will generate and accept geojsons in corresponding requests.
+3. Also supported are :code:`id` and :code:`bbox` fields:
+   ::
+      
+      @geojson_serializer('location', id='id', bbox='bounding_box')
+      class MySerializer(serializers.ModelSerializer):
+      ....
+
+   In this case :code:`'id'` and :code:`'bounding_box'` fields should be defined by the underlying serializer :code:`MySerializer`.
+
+
+

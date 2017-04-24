@@ -27,6 +27,8 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+import sys
+sys.path.append("../")
 
 # Application definition
 
@@ -38,7 +40,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
-    'tests'
+    'tests',
+    'geojson_serializer'
 ]
 
 MIDDLEWARE = [

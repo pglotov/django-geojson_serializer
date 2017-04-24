@@ -33,6 +33,7 @@ class TestGeojsonSerializer(TestCase):
         assert data['geometry'].has_key('type')
         assert data['geometry']['type'] == 'Point'
         assert data['geometry'].has_key('coordinates')
+        assert data.has_key('id')
 
     def test_to_representation_box(self):
         response = self.client.get('/cities_box/')
@@ -46,3 +47,7 @@ class TestGeojsonSerializer(TestCase):
         assert data['geometry'].has_key('type')
         assert data['geometry']['type'] == 'Polygon'
         assert data['geometry'].has_key('coordinates')
+
+    def test_to_representation_bbox(self):
+        response = self.client.get('/cities_bbox/')
+        assert len(response.data) == 1

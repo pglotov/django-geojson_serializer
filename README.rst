@@ -14,7 +14,7 @@ Geojson serializer works with django rest framework as a decorator.
 
       INSTALLED_APPS = [
       ....
-      'django-geojson_serializer'
+      'geojson_serializer'
       ]
 
 2. In your code you can use :code:`geojson_serializer(<name-of-geo-field>)` decorator with a regualar serializer, e.g.:
